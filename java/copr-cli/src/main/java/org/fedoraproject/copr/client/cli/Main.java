@@ -23,5 +23,6 @@ public class Main
     public static void main( String[] args )
     {
         CoprCli cli = new CoprCli();
+        cli.run( args );
     }
 }
