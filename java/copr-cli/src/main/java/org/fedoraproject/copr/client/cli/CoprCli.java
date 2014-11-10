@@ -47,6 +47,7 @@ public class CoprCli
             System.err.println( "Unable to load Copr configuration" );
             System.exit( 1 );
         }
+        jc.addCommand( "list", new ListCommand() );
         try
         {
             jc.parse( args );
