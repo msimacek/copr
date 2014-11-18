@@ -55,7 +55,7 @@ public class CoprCli
             {
                 JCommander commander = jc.getCommands().get( jc.getParsedCommand() );
                 CliCommand command = (CliCommand) commander.getObjects().get( 0 );
-                command.run( session );
+                command.run( session, configuration );
             }
         }
         catch ( CoprException | ParameterException e )
