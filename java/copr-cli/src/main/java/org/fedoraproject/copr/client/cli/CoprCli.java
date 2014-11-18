@@ -48,6 +48,7 @@ public class CoprCli
             System.exit( 1 );
         }
         jc.addCommand( "list", new ListCommand() );
+        jc.addCommand( "build", new BuildCommand() );
         try
         {
             jc.parse( args );
