@@ -15,13 +15,18 @@
  */
 package org.fedoraproject.copr.client.impl;
 
+import java.lang.reflect.Type;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 
 import org.fedoraproject.copr.client.BuildRequest;
 import org.fedoraproject.copr.client.BuildResult;
-
-import com.google.gson.JsonObject;
 
 /**
  * @author Mikolaj Izdebski
@@ -80,9 +85,13 @@ public class BuildCommand
     @Override
     protected BuildResult parseResponse( JsonObject response )
     {
-        long buildId = response.get( "id" ).getAsLong();
+        JsonArray idsArray = response.get( "ids" ).getAsJsonArray();
+        Type type = new TypeToken<List<Long>>()
+        {
+        }.getType();
+        List<Long> buildIds = new Gson().fromJson( idsArray, type );
         String message = response.get( "message" ).getAsString();
 
-        return new DefaultBuildResult( buildId, message );
+        return new DefaultBuildResult( buildIds, message );
     }
 }

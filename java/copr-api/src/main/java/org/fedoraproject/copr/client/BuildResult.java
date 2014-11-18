@@ -15,6 +15,8 @@
  */
 package org.fedoraproject.copr.client;
 
+import java.util.List;
+
 /**
  * @author Mikolaj Izdebski
  */
@@ -22,5 +24,5 @@ public interface BuildResult
 {
     String getMessage();
 
-    long getBuildId();
+    List<Long> getBuildIds();
 }

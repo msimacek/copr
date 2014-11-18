@@ -18,6 +18,7 @@ package org.fedoraproject.copr.client.impl;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
@@ -59,7 +60,7 @@ public class BuildTest
         assertEquals( 1, server.getAcceptedConnectionCount() );
 
         assertEquals( "Build was added to log4j.", result.getMessage() );
-        assertEquals( 5, result.getBuildId() );
+        assertArrayEquals( new Long[] { 5L, 6L }, result.getBuildIds().toArray() );
     }
 
     @Test

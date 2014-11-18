@@ -15,6 +15,9 @@
  */
 package org.fedoraproject.copr.client.impl;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.fedoraproject.copr.client.BuildResult;
 
 /**
@@ -23,20 +26,20 @@ import org.fedoraproject.copr.client.BuildResult;
 public class DefaultBuildResult
     implements BuildResult
 {
-    private final long buildId;
+    private final List<Long> buildIds;
 
     private final String message;
 
-    public DefaultBuildResult( long buildId, String message )
+    public DefaultBuildResult( List<Long> buildIds, String message )
     {
-        this.buildId = buildId;
+        this.buildIds = buildIds;
         this.message = message;
     }
 
     @Override
-    public long getBuildId()
+    public List<Long> getBuildIds()
     {
-        return buildId;
+        return Collections.unmodifiableList( buildIds );
     }
 
     @Override
