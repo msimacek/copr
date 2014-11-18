@@ -89,6 +89,10 @@ public class ConfigurationLoader
                 String token = wini.get( "copr-cli", "token" );
                 if ( token != null )
                     configuration.setToken( token );
+
+                String username = wini.get( "copr-cli", "username" );
+                if ( username != null )
+                    configuration.setUsername( username );
             }
             catch ( IOException e )
             {
