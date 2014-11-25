@@ -13,7 +13,8 @@
  ! See the License for the specific language governing permissions and
  ! limitations under the License.
  `-->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.fedoraproject.copr.client</groupId>
   <artifactId>copr-parent</artifactId>
@@ -21,27 +22,27 @@
   <packaging>pom</packaging>
   <name>Copr Client Parent POM</name>
   <modules>
-  	<module>copr-api</module>
-  	<module>copr-impl</module>
-  	<module>copr-cli</module>
+    <module>copr-api</module>
+    <module>copr-impl</module>
+    <module>copr-cli</module>
   </modules>
   <build>
-  	<plugins>
-  		<plugin>
-  			<artifactId>maven-compiler-plugin</artifactId>
-  			<configuration>
-  				<source>1.7</source>
-  				<target>1.7</target>
-  			</configuration>
-  		</plugin>
-  	</plugins>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   <organization>
-  	<name>Red Hat, Inc.</name>
-  	<url>http://www.redhat.com/</url>
+    <name>Red Hat, Inc.</name>
+    <url>http://www.redhat.com/</url>
   </organization>
   <issueManagement>
-  	<system>Bugzilla</system>
-  	<url>https://bugzilla.redhat.com/</url>
+    <system>Bugzilla</system>
+    <url>https://bugzilla.redhat.com/</url>
   </issueManagement>
 </project>
