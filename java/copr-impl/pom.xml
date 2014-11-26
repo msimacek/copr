@@ -21,6 +21,23 @@
     <version>0.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>copr-impl</artifactId>
+  <packaging>bundle</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Localization>plugin</Bundle-Localization>
+            <Export-Package>org.fedoraproject.copr.client.impl</Export-Package>
+            <Eclipse-BuddyPolicy>dependent</Eclipse-BuddyPolicy>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
   	<dependency>
   		<groupId>${project.groupId}</groupId>
