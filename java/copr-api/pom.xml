@@ -22,25 +22,20 @@
     <version>0.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>copr-api</artifactId>
+  <packaging>bundle</packaging>
   <name>Copr Client API</name>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
         <configuration>
-          <archive>
-            <manifestEntries>
-              <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
-              <Bundle-Localization>plugin</Bundle-Localization>
-              <Bundle-SymbolicName>org.fedoraproject.copr.client.copr-api</Bundle-SymbolicName>
-              <Bundle-Name>${project.name}</Bundle-Name>
-              <Bundle-Version>${project.version}</Bundle-Version>
-              <Export-Package>org.fedoraproject.copr.client</Export-Package>
-              <Eclipse-BuddyPolicy>dependent</Eclipse-BuddyPolicy>
-            </manifestEntries>
-          </archive>
+          <instructions>
+            <Bundle-Localization>plugin</Bundle-Localization>
+            <Export-Package>org.fedoraproject.copr.client</Export-Package>
+            <Eclipse-BuddyPolicy>dependent</Eclipse-BuddyPolicy>
+          </instructions>
         </configuration>
       </plugin>
     </plugins>
