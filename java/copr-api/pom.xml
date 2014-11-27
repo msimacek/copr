@@ -35,6 +35,7 @@
             <Bundle-Localization>plugin</Bundle-Localization>
             <Export-Package>org.fedoraproject.copr.client</Export-Package>
             <Eclipse-BuddyPolicy>dependent</Eclipse-BuddyPolicy>
+            <_nouses>true</_nouses>
           </instructions>
         </configuration>
       </plugin>
