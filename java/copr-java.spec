@@ -1,9 +1,9 @@
-Name:		copr-java
-Version:	0.2
-Release:	1%{?dist}
-Summary:	COPR Java client
-License:	ASL 2.0
-URL:		https://fedorahosted.org/copr/
+Name:           copr-java
+Version:        0.2
+Release:        1%{?dist}
+Summary:        COPR Java client
+License:        ASL 2.0
+URL:            https://fedorahosted.org/copr/
 
 # Source is created by
 # git clone https://git.fedorahosted.org/git/copr.git
@@ -11,7 +11,15 @@ URL:		https://fedorahosted.org/copr/
 # tito build --tgz
 Source0:        %{name}-%{version}.tar.gz
 
-BuildRequires:	maven-local
+BuildRequires:  maven-local
+BuildRequires:  mvn(com.beust:jcommander)
+BuildRequires:  mvn(com.google.code.gson:gson)
+BuildRequires:  mvn(junit:junit)
+BuildRequires:  mvn(org.apache.felix:maven-bundle-plugin)
+BuildRequires:  mvn(org.apache.httpcomponents:httpclient)
+BuildRequires:  mvn(org.apache.httpcomponents:httpclient::tests:)
+BuildRequires:  mvn(org.easymock:easymock)
+BuildRequires:  mvn(org.ini4j:ini4j)
 
 %description
 COPR is lightweight build system. It allows you to create new project in WebUI,
